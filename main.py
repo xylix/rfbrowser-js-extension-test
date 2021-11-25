@@ -20,7 +20,8 @@ with sync_playwright() as p:
     browser = browser_type.launch()
     context = browser.new_context()
     
-    # In RFBrowser we will handle this automatically for contexts. User gives extension modules at library import time or some other time and then they will affect all current and future contexts.
+    # In RFBrowser we will handle this automatically for contexts. 
+    # User gives extension modules at library import time or some other time and then they will affect all current and future contexts.
     import_js_extension(context, Path("funky.js"))
     page = context.new_page()
     page.goto('http://whatsmyuseragent.org/')
